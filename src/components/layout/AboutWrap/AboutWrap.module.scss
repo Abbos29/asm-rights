@@ -1,0 +1,73 @@
+@import "@/styles/vars.scss";
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+    align-items: center;
+    
+    @media (max-width: 1300px) {
+        gap: 40px;
+    }
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+
+      img {
+        max-width: 500px;
+      }
+    }
+}
+
+.image {
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+
+    @media (max-width: 480px) {
+      gap: 25px;
+    }
+
+    h2 {
+        font-weight: 400;
+        // font-size: 40px;
+        font-size: clamp(1.75rem, 1.429rem + 1.32vw, 2.5rem);
+
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: $colorBlueDark;
+
+        border-bottom: 1px solid $colorBlueDark;
+        padding-bottom: 30px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.8;
+        letter-spacing: 0%;
+        color: #8E8C8C;
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        span {
+            color: $colorBlueLight;
+        }
+    }
+}
+
+
+
+.socs {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}

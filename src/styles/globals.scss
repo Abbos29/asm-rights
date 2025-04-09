@@ -1,12 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Prosto+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import '@/styles/vars.scss';
+@import url("https://fonts.googleapis.com/css2?family=Prosto+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "@/styles/vars.scss";
 
 * {
-  /* font-family: "Prosto One", sans-serif; */
+  font-family: "Prosto One", sans-serif;
   font-family: "Roboto", sans-serif;
 }
 
+section {
+  padding: 45px 0;
 
+  @media (max-width: 480px) {
+    padding: 20px 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Prosto One", sans-serif;
+}
 
 body {
   background-color: $colorWhiteMain;

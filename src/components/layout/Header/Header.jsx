@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import s from './Header.module.scss'
 import Container from '@/components/ui/Container/Container'
 import Link from 'next/link'
 
 const Header = () => {
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenu = () => {
+        setIsOpen(prev => !prev)
+    }
+
+    const closeMenu = () => {
+        setIsOpen(false)
+    }
+
+
     return (
         <>
             <header className={s.header}>
@@ -13,14 +25,14 @@ const Header = () => {
                             <img src="/logo.svg" alt="logo" />
                         </Link>
 
-                        <div className={s.menu}>
-                            <Link href={'/'}>Главная</Link>
-                            <Link href={'/'}>Каталог</Link>
-                            <Link href={'/'}>Услуги</Link>
-                            <Link href={'/'}>О компании</Link>
-                            <Link href={'/'}>Новости и статьи</Link>
-                            <Link href={'/'}>Правовая база</Link>
-                            <Link href={'/'}>Контакты</Link>
+                        <div className={`${s.menu} ${isOpen ? s.open : ''}`}>
+                            <Link href={'/'} onClick={closeMenu}>Главная</Link>
+                            <Link href={'/'} onClick={closeMenu}>Каталог</Link>
+                            <Link href={'/'} onClick={closeMenu}>Услуги</Link>
+                            <Link href={'/'} onClick={closeMenu}>О компании</Link>
+                            <Link href={'/'} onClick={closeMenu}>Новости и статьи</Link>
+                            <Link href={'/'} onClick={closeMenu}>Правовая база</Link>
+                            <Link href={'/'} onClick={closeMenu}>Контакты</Link>
                         </div>
 
                         <div className={s.box}>
@@ -32,7 +44,7 @@ const Header = () => {
                             </Link>
                         </div>
 
-                        <div className={s.burger}>
+                        <div className={s.burger} onClick={toggleMenu}>
                             <span></span>
                             <span></span>
                             <span></span>

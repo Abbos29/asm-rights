@@ -1,0 +1,124 @@
+@import "@/styles/vars.scss";
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 30px;
+    position: relative;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 50px;
+    border: 1px solid #e1ebff;
+    background-color: #fff;
+
+    @media (max-width: 480px) {
+        gap: 10px;
+        padding: 28px;
+        border-radius: 20px;
+    }
+
+    transition: 0.4s;
+
+    &:hover {
+        background-color: $colorBlueLight;
+        h3,
+        p {
+            color: #fff;
+
+            span {
+                color: $colorBlueLight2;
+            }
+        }
+    }
+
+    .icon {
+        width: 68px;
+        min-width: 68px;
+        height: 68px;
+        aspect-ratio: 1/1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $colorBlueLight2;
+
+        @media (max-width: 480px) {
+          width: 45px;
+          min-width: 45px;
+          height: 45px;
+          padding: 6px;
+        }
+    }
+
+    .top {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+    }
+
+    h3 {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0%;
+        color: $colorBlueDark;
+
+        transition: 0.4s;
+
+        @media (max-width: 480px) {
+            font-size: 18px;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.8;
+        letter-spacing: 0%;
+        color: #8e8c8c;
+
+        max-width: 530px;
+
+        transition: 0.4s;
+
+        @media (max-width: 480px) {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        span {
+            color: $colorBlueLight;
+            transition: 0.4s;
+        }
+    }
+}
+
+.center_img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    @media (max-width: 768px) {
+        width: 70px;
+        height: 70px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    @media (max-width: 480px) {
+      display: none;
+    }
+}
