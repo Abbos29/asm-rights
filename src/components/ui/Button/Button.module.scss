@@ -1,0 +1,15 @@
+@import "@/styles/vars.scss";
+
+
+.btn {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #fff;
+    background-color: $colorBlueLight2;
+    border-radius: 30px;
+    padding: 16px 40px;
+    border: none;
+    cursor: pointer;
+}

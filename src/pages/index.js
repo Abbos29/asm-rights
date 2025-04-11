@@ -1,6 +1,8 @@
 import AboutWrap from "@/components/layout/AboutWrap/AboutWrap";
+import AdvBlock from "@/components/layout/AdvBlock/AdvBlock";
 import Benefits from "@/components/layout/Benefits/Benefits";
 import Hero from "@/components/layout/Hero/Hero";
+import NewsWrap from "@/components/layout/NewsWrap/NewsWrap";
 import Seo from "@/components/ui/Seo/Seo";
 
 export default function Home() {
@@ -14,6 +16,8 @@ export default function Home() {
       <Hero />
       <AboutWrap />
       <Benefits />
+      <AdvBlock />
+      <NewsWrap />
     </>
   );
 }

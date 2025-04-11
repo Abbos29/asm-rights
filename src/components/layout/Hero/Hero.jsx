@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './Hero.module.scss'
 import Container from '@/components/ui/Container/Container'
+import Button from '@/components/ui/Button/Button'
 
 const Hero = () => {
     return (
@@ -15,7 +16,9 @@ const Hero = () => {
                             <h2>Автоматизированная система менеджмента</h2>
                         </div>
                         <div className={s.btns}>
-                            <button>Обучение</button>
+                            {/* <button>Обучение</button> */}
+
+                            <Button>Обучение</Button>
                         </div>
                         <img className={s.image} src="/hero-bg.jpg" alt="img" />
                     </div>
