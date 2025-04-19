@@ -26,12 +26,15 @@ const benefitsData = [
 ]
 
 
-const Benefits = () => {
+const Benefits = ({ data }) => {
+
+    console.log(data);
+
     return (
         <section className={s.benefits}>
             <Container>
                 <div className={s.wrapper}>
-                    {benefitsData.map((item, idx) => (
+                    {data.map((item, idx) => (
                         <div key={idx} className={s.item}>
                             <div className={s.top}>
                                 <div className={s.icon}>
@@ -39,7 +42,8 @@ const Benefits = () => {
                                 </div>
                                 <h3>{item.title}</h3>
                             </div>
-                            <p dangerouslySetInnerHTML={{ __html: item.text }} />
+                            {/* <p dangerouslySetInnerHTML={{ __html: item.text }} /> */}
+                            <p>{item.description}</p>
                         </div>
                     ))}
 

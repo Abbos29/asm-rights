@@ -31,7 +31,10 @@ const newsList = [
     },
 ];
 
-const NewsWrap = () => {
+const NewsWrap = ({ data }) => {
+
+    console.log(data);
+
     return (
         <section className={s.newsWrap}>
             <Container>
@@ -43,7 +46,7 @@ const NewsWrap = () => {
                 </div>
 
                 <div className={s.wrapper}>
-                    {newsList.map((news) => (
+                    {data.map((news) => (
                         <div className={s.item} key={news.id}>
                             <div className={s.item_top}>
                                 <div className={s.item_image}>
@@ -55,10 +58,12 @@ const NewsWrap = () => {
                             <p>{news.description}</p>
 
                             <div className={s.item_bottom}>
-                                <h5>{news.date}</h5>
+                                {/* <h5>{news.created_at}</h5> */}
+                                <h5>{news.created_at.split('T')[0]}</h5>
+
 
                                 <div className={s.item_bottom_right}>
-                                    <Link href={news.link}>
+                                    <Link href={`/`}>
                                         <Button>Подробнее</Button>
                                     </Link>
                                 </div>

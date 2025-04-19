@@ -4,8 +4,18 @@ import Benefits from "@/components/layout/Benefits/Benefits";
 import Hero from "@/components/layout/Hero/Hero";
 import NewsWrap from "@/components/layout/NewsWrap/NewsWrap";
 import Seo from "@/components/ui/Seo/Seo";
+import instance from "@/lib/axios";
 
-export default function Home() {
+export async function getServerSideProps() {
+  const aboutData = (await instance.get('/landing/about/')).data
+  const featuresData = (await instance.get('/landing/features/')).data
+  const newsData = (await instance.get('/landing/news/')).data
+
+  return { props: { aboutData, featuresData, newsData } }
+}
+
+export default function Home({ aboutData, featuresData, newsData }) {
+
   return (
     <>
       <Seo
@@ -14,10 +24,10 @@ export default function Home() {
       />
 
       <Hero />
-      <AboutWrap />
-      <Benefits />
+      <AboutWrap data={aboutData} />
+      <Benefits data={featuresData} />
       <AdvBlock />
-      <NewsWrap />
+      <NewsWrap data={newsData} />
     </>
   );
 }

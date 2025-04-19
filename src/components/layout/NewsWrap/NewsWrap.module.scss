@@ -48,6 +48,10 @@
     border-radius: 50px;
 
     border: 1px solid #e1ebff;
+
+    display: flex;
+    flex-direction: column;
+    
     p {
         font-weight: 400;
         font-size: 16px;
@@ -118,7 +122,8 @@
 }
 
 .item_bottom {
-    margin-top: 40px;
+    // margin-top: 40px;
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
